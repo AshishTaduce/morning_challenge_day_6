@@ -5,6 +5,7 @@
 // divisors is 9 which is not equal to 15
 // if 6 is given as input it should print 'true' because Divisors of 6 are 1, 2 and 3. Sum of
 // divisors is 6.
+import 'dart:math';
 bool perfectCheck(int number){
   int sum = 0;
   //print(number);
@@ -56,6 +57,6 @@ void main() {
   box(points);
 
   // Test the perfect number function here
-  print (perfectCheck(2));
+  print (perfectCheck(6));
 
 }
