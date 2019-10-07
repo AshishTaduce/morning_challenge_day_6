@@ -5,6 +5,20 @@
 // divisors is 9 which is not equal to 15
 // if 6 is given as input it should print 'true' because Divisors of 6 are 1, 2 and 3. Sum of
 // divisors is 6.
+bool perfectCheck(int number){
+  var sum = 0;
+  for (int i = 0; i<= 100; i++){
+    if (number % i == 0){
+      sum = sum + i;
+    }
+  }
+  if (number == sum){
+    return (true);
+  }
+  else {
+    return(false);
+  }
+}
 
 class Point {
   int x;
@@ -23,11 +37,14 @@ class Point {
 // Bottom-left: (-1, 0)
 // Top-right: (2,3)
 
+//dynamic smallestRect
+
 
 
 void main() {
   // Test the function defined above with given List of points
   List<Point> points = [Point(-1, 0), Point(2, 2), Point(1, 3)];
+  perfectCheck(12);
 
   // Test the perfect number function here
 
