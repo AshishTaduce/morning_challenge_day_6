@@ -6,18 +6,14 @@
 // if 6 is given as input it should print 'true' because Divisors of 6 are 1, 2 and 3. Sum of
 // divisors is 6.
 bool perfectCheck(int number){
-  var sum = 0;
-  for (int i = 0; i<= 100; i++){
+  int sum = 0;
+  //print(number);
+  for (int i = 1; i<= number ~/ 2; i++){
     if (number % i == 0){
       sum = sum + i;
     }
   }
-  if (number == sum){
-    return (true);
-  }
-  else {
-    return(false);
-  }
+  return(number == sum);
 }
 
 class Point {
@@ -37,15 +33,29 @@ class Point {
 // Bottom-left: (-1, 0)
 // Top-right: (2,3)
 
-//dynamic smallestRect
+void box(List<Point> p){
+  List<int> x = p.map((Point pt)=>pt.x).toList();
+
+  List<int> y = p.map((Point pt)=>pt.y).toList();
+
+  int xmin = x.reduce(min);
+  int ymin = y.reduce(min);
+  int xmax = x.reduce(max);
+  int ymax = y.reduce(max);
+  print('Bottom - left: ($xmin , $ymin )');
+  print('Top - right: ($xmax , $ymax )');
+
+
+}
 
 
 
 void main() {
   // Test the function defined above with given List of points
   List<Point> points = [Point(-1, 0), Point(2, 2), Point(1, 3)];
-  perfectCheck(12);
+  box(points);
 
   // Test the perfect number function here
+  print (perfectCheck(2));
 
 }
